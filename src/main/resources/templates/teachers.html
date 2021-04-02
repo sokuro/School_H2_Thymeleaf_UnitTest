@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Teachers</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <div>
+        <a th:href="@{/addTeacher}">Add Teacher</a>
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Picture url</th>
+                <th>Email</th>
+            </tr>
+            <tr th:each ="teacher : ${teachers}">
+                <td th:utext="${teacher.name}">...</td>
+                <td th:utext="${teacher.pictureURL}">...</td>
+                <td th:utext="${teacher.email}">...</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
